@@ -30,3 +30,4 @@ Route::get('/user', function () {
     return Auth::user();
 })->name('user');
 
+Route::post('/photos', 'PhotoController@create')->name('photo.create');
