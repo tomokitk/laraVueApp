@@ -14,7 +14,6 @@
 // 上から読み込まれるからここに書く
 Route::get('/photos/{photo}/download', 'PhotoController@download');
 
-
 Route::get('/{any?}', function () {
     return view('index');
 })->where('any', '.+');
