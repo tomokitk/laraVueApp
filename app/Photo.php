@@ -17,7 +17,7 @@ class Photo extends Model
 
     /** JSONに含める属性 */
     protected $visible = [
-        'id', 'owner', 'url',
+        'id', 'owner', 'url', 'comments'
     ];
 
     protected $perPage = 1;
@@ -40,6 +40,15 @@ class Photo extends Model
     private function setId()
     {
         $this->attributes['id'] = $this->getRandomId();
+    }
+
+    /**
+     * リレーションシップ - commentsテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->orderBy('id', 'desc');
     }
 
     /**
