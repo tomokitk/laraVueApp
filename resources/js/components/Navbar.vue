@@ -19,7 +19,7 @@
         </RouterLink>
       </div>
     </div>
-    <PhotoForm v-model="showForm" />
+    <PhotoForm  v-if="showForm" v-model="showForm" />
   </nav>
 </template>
 
